@@ -2,8 +2,8 @@ var app = new Vue({
   el: '#root',
   data: {
 
-
-      message: 'Hello Vue!'
+      risultato: '' ,
+      albums: [],
 },
   methods : {
 
@@ -11,11 +11,18 @@ var app = new Vue({
 
   mounted () {
 
-          axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-      .then(response => {
-        console.log(response.data.response);
-    })
+        for (var i = 0; i < 10; i++) {
+
+            axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+        .then(response => {
+          console.log(response.data.response[0].title);
+           this.albums.push(response.data.response[0]);
+
+        })
 
 
-  }
+        }
+
+
+    }
 })

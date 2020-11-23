@@ -4,6 +4,7 @@ var app = new Vue({
 
       risultato: '' ,
       albums: [],
+      indiceCorrente : 0 ,
 },
   methods : {
 
@@ -11,18 +12,28 @@ var app = new Vue({
 
   mounted () {
 
-        for (var i = 0; i < 10; i++) {
+
 
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
         .then(response => {
-          console.log(response.data.response[0].title);
-           this.albums.push(response.data.response[0]);
 
+            //indice corrente deve essere uguale a 5
+            // this.indiceCorrente = 5
+
+            // this.indiceCorrente = i ;
+          console.log(response.data.response);
+          this.albums = response.data.response
+          // this.albums.push(response.data.response);
+          console.log(this.albums);
         })
+
+
+
+
 
 
         }
 
 
-    }
+
 })

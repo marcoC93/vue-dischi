@@ -3,3 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+.card {
+    display: flex;
+    flex-direction: row;
+
+    width: 200px;
+
+    border: 1px solid black;
+}
+.album-img {
+    display: block;
+    width: 100% ;
+}
